@@ -1,9 +1,10 @@
 {% extends 'hotel/base.html' %}
 
 {% block content %}
-<form action="/hotel/novo/" method="post">
+<form action="/hotel/newHotel/" method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+    <p><label for="id_nome">Nome:</label>
+    <input id="id_nome" type="text" name="nome" maxlength="100" required /></p>
   <input type="submit" value="Salvar" />
 </form>
 {% endblock content %}
