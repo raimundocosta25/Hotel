@@ -2,8 +2,14 @@
 
 {% block content %}
 <form action="/hotel/newCheck/" method="post">
+<div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro da propriedade</h3>
+        </div>  
+
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" value="Salvar" />
+  </div>
 </form>
 {% endblock content %}

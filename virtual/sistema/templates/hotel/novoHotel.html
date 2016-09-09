@@ -3,8 +3,518 @@
 {% block content %}
 <form action="/hotel/newHotel/" method="post">
   {% csrf_token %}
-    <p><label for="id_nome">Nome:</label>
-    <input id="id_nome" type="text" name="nome" maxlength="100" required /></p>
-  <input type="submit" value="Salvar" />
+
+    <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro da propriedade</h3>
+        </div>  
+
+	    <div class="form-group">
+	    	<div class="box-body">
+	    	<div class="row">
+	    	<!-- Inicio do grupo nome/cidade com col-md-6.
+	    	cada input fica encapsulado em um form-group
+	    	ao fechar a div class col-md-6 é só criar outra div 
+	    	com mais dois elementos dentro de 2 novos form-group 
+	    	para ficarem lado a lado -->
+            <div class="col-md-6">
+	    			<div class="form-group">
+		    			<label for="id_nome">Nome da propriedade</label>
+	    				<input id="id_nome" class="form-control"  name="nome" placeholder="Digite o nome da propriedade" required />
+    				</div>
+    				<div class="form-group">
+    					<div class="form-group">
+	              			<label>Telefone de contato</label>	
+		    				<input class="form-control" type="text" placeholder="Digite o nº de telefone" required />
+    					</div>
+    				</div>		                
+	                <!-- fim da div telefone -->
+	            </div>
+	              <!-- fim do col-md-6 nome/telefone -->
+	            <div class="col-md-6">
+              		<div class="form-group">
+              			<label>CNPJ da propriedade</label>
+	    				<input class="form-control" placeholder="Digite o CNPJ da propriedade" required />
+    				</div>
+
+    				<div class="form-group">
+    					<label>WhatsApp</label>	
+	    				<input class="form-control" type="text" placeholder="Digite o nº para contato via Whatsapp" />    					
+    				</div>
+    			</div>
+    			<!-- fim class-md-6 CNPJ/whatsapp-->
+    			<div class="col-md-6">
+    				<div class="form-group">
+              			<label>Email da propriedade</label>	
+	    				<input class="form-control" type="email" placeholder="Digite o email de contato" required />
+    				</div>	
+              		<div class="form-group">
+              			<label>Bairro</label>	
+	    				<input class="form-control" type="text" placeholder="Ex: centro" />
+              			
+	                </div>
+	                
+	            </div>
+	            <!-- fim class-md-6 bairro/email-->
+	            <div class="col-md-6">
+              		<div class="form-group">
+              			<label>Endereço</label>	
+	    				<input class="form-control" type="text" placeholder="Ex: Av. 1, número 00" />
+    				</div>	
+
+    				<div class="form-group">
+              			<label>Cidade</label>
+		                <select class="form-control select2" style="width: 100%;">
+		                  <option selected="selected">Palmas</option>
+		                  <option>Abreulândia</option>
+		                  <option>Aguiarnópolis</option>
+		                  <option>Aliança do Tocantins</option>
+		                  <option>Almas</option>
+		                  <option>Alvorada</option>
+		                  <option>Ananás</option>
+		                  <option>Angico</option>
+		                  <option>Aparecida do Rio Negro</option>
+		                  <option>Aragominas</option>
+		                  <option>Araguacema</option>
+		                  <option>Araguaçu</option>
+		                  <option>Araguaína</option>
+		                  <option>Araguanã</option>
+		                  <option>Araguatins</option>
+		                  <option>Arapoema</option>
+		                  <option>Arraias</option>
+		                  <option>Augustinópolis</option>
+		                  <option>Aurora do Tocantins</option>
+		                  <option>Axixá do Tocantins</option>
+		                  <option>Babaçulândia</option>
+		                  <option>Bandeirantes do Tocantins</option>
+		                  <option>Barra do Ouro</option>
+		                  <option>Barrolândia</option>
+		                  <option>Bernardo Sayão</option>
+		                  <option>Bom Jesus do Tocantins</option>
+		                  <option>Brasilândia do Tocantins</option>
+		                  <option>Brejinho de Nazaré</option>
+		                  <option>Buriti do Tocantins</option>
+		                  <option>Cachoeirinha</option>
+		                  <option>Campos Lindos</option>
+		                  <option>Cariri do Tocantins</option>
+		                  <option>Carmolândia</option>
+		                  <option>Carrasco Bonito</option>
+		                  <option>Caseara</option>
+		                  <option>Centenário</option>
+		                  <option>Chapada da Natividade</option>
+		                  <option>Chapada de Areia</option>
+		                  <option>Colinas do Tocantins</option>
+		                  <option>Colméia</option>
+		                  <option>Combinado</option>
+		                  <option>Conceição do Tocantins</option>
+		                  <option>Couto de Magalhães</option>
+		                  <option>Cristalândia</option>
+		                  <option>Crixás do Tocantins</option>
+		                  <option>Darcinópolis</option>
+		                  <option>Dianópolis</option>
+		                  <option>Divinópolis do Tocantins</option>
+		                  <option>Dois Irmãos do Tocantins</option>
+		                  <option>Dueré</option>
+		                  <option>Esperantina</option>
+		                  <option>Fátima</option>
+		                  <option>Figueirópolis</option>
+		                  <option>Filadélfia</option>
+		                  <option>Formoso do Araguaia</option>
+		                  <option>Fortaleza do Tabocão</option>
+		                  <option>Goianorte</option>
+		                  <option>Goiatins</option>
+		                  <option>Guaraí</option>
+		                  <option>Gurupi</option>
+		                  <option>Ipueiras</option>
+		                  <option>Itacajá</option>
+		                  <option>Itaguatins</option>
+		                  <option>Itapiratins</option>
+		                  <option>Itaporã do Tocantins</option>
+		                  <option>Jaú do Tocantins</option>
+		                  <option>Juarina</option>
+		                  <option>Lagoa da Confusão</option>
+		                  <option>Lagoa do Tocantins</option>
+		                  <option>Lajeado</option>
+		                  <option>Lavandeira</option>
+		                  <option>Lizarda</option>
+		                  <option>Luzinópolis</option>
+		                  <option>Marianópolis do Tocantins</option>
+		                  <option>Mateiros</option>
+		                  <option>Maurilândia do Tocantins</option>
+		                  <option>Miracema do Tocantins</option>
+		                  <option>Miranorte</option>
+		                  <option>Monte do Carmo</option>
+		                  <option>Monte Santo do Tocantins</option>
+		                  <option>Muricilândia</option>
+		                  <option>Natividade</option>
+		                  <option>Nazaré</option>
+		                  <option>Nova Olinda</option>
+		                  <option>Nova Rosalândia</option>
+		                  <option>Novo Acordo</option>
+		                  <option>Novo Alegre</option>
+		                  <option>Novo Jardim</option>
+		                  <option>Oliveira de Fátima</option>
+		                  <option>Palmas</option>
+		                  <option>Palmeirante</option>
+		                  <option>Palmeiras do Tocantins</option>
+		                  <option>Palmeirópolis</option>
+		                  <option>Paraíso do Tocantins</option>
+		                  <option>Paranã</option>
+		                  <option>Pau d'Arco</option>
+		                  <option>Pedro Afonso</option>
+		                  <option>Peixe</option>
+		                  <option>Pequizeiro</option>
+		                  <option>Pindorama do Tocantins</option>
+		                  <option>Piraquê</option>
+		                  <option>Pium</option>
+		                  <option>Ponte Alta do Bom Jesus</option>
+		                  <option>Ponte Alta do Tocantins</option>
+		                  <option>Porto Alegre do Tocantins</option>
+		                  <option>Porto Nacional</option>
+		                  <option>Praia Norte</option>
+		                  <option>Presidente Kennedy</option>
+		                  <option>Pugmil</option>
+		                  <option>Recursolândia</option>
+		                  <option>Riachinho</option>
+		                  <option>Rio da Conceição</option>
+		                  <option>Rio dos Bois</option>
+		                  <option>Rio Sono</option>
+		                  <option>Sampaio</option>
+		                  <option>Sandolândia</option>
+		                  <option>Santa Fé do Araguaia</option>
+		                  <option>Santa Maria do Tocantins</option>
+		                  <option>Santa Rita do Tocantins</option>
+		                  <option>Santa Rosa do Tocantins</option>
+		                  <option>Santa Tereza do Tocantins</option>
+		                  <option>Santa Terezinha do Tocantins</option>
+		                  <option>São Bento do Tocantins</option>
+		                  <option>São Félix do Tocantins</option>
+		                  <option>São Miguel do Tocantins</option>
+		                  <option>São Salvador do Tocantins</option>
+		                  <option>São Sebastião do Tocantins</option>
+		                  <option>São Valério da Natividade</option>
+		                  <option>Silvanópolis</option>
+		                  <option>Sítio Novo do Tocantins</option>
+		                  <option>Sucupira</option>
+		                  <option>Taguatinga</option>
+		                  <option>Taipas do Tocantins</option>
+		                  <option>Talismã</option>
+		                  <option>Tocantínia</option>
+		                  <option>Tocantinópolis</option>
+		                  <option>Tupirama</option>
+		                  <option>Tupiratins</option>
+		                  <option>Wanderlândia</option>
+		                  <option>Xambioá</option>
+		                </select>
+    				</div>	
+    				<!-- fim da div cidade-->
+	        	</div>
+
+	        	<!-- fim class-md-6 cidade/email-->
+	        	
+	        </div>
+	        <!-- fim do class row -->
+	        <button class="btn btn-primary pull-right" type="submit" value="Salvar" ">Salvar
+	    	</button>
+	    </div>
+	    <!-- fim do body-box-->
+	    <div class="box-footer">	 
+	    	<button class="btn btn-info pull-right" type="button"  data-toggle="collapse" data-target="#collapseExample"  value="proximo">PRÓXIMO
+	    	</button>  
+            
+        </div>
+	</div>
+	<!-- fim do fomulário -->
+	</div>
+	<!-- fim do box-danger-->
+	<div  id="collapseExample" class="collapse">
+	<div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro de Itens gerais da propriedade</h3>
+        </div>  
+
+	    
+	    	<div class="box-body">
+	    	<div class="form-group">
+	    	<div class="row">
+	    	<!-- Inicio do grupo nome/cidade com col-md-6.
+	    	cada input fica encapsulado em um form-group
+	    	ao fechar a div class col-md-4 é só criar outra div 
+	    	com mais dois elementos dentro de 2 novos form-group 
+	    	para ficarem lado a lado -->
+            <div class="col-md-4">
+            	<div class="form-group ">
+              		<label for="internet">	
+	    			<input type="checkbox" name="internet" id="internet" value="internet" /> Internet
+	    			</label>
+    			</div>
+
+    			<div class="form-group">
+              		<label for="estacionamento">	
+	    			<input type="checkbox" name="estacionamento" id="estacionamento" value="estacionamento" /> Estacionamento
+	    			</label>
+    			</div>	
+
+    			<div class="form-group">
+              		<label for="cafe_da_manha">	
+	    			<input type="checkbox" name="café da manhã" id="cafe_da_manha" value="Café da manhã" /> Café da manhã
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="almoco-p-viagem">	
+	    			<input type="checkbox" name="almoco-p-viagem" id="almoco-p-viagem" value="almoco-p-viagem" /> Almoço para viagem
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="piscina">	
+	    			<input type="checkbox" name="piscina" id="piscina" value="piscina" /> Piscina
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="banheira-de-hidromassagem">	
+	    			<input type="checkbox" name="banheira-de-hidromassagem" id="banheira-de-hidromassagem" value="banheira-de-hidromassagem" /> Banheira de hidromassagem
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="bicicleta-gratuita">	
+	    			<input type="checkbox" name="bicicleta-gratuita" id="bicicleta-gratuita" value="bicicleta-gratuita" /> Bicicleta Gratuita
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="recepcao-24h">	
+	    			<input type="checkbox" name="recepcao-24h" id="recepcao-24h" value="recepcao-24h" /> Recepção 24 horas
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="caixa-eletronico">	
+	    			<input type="checkbox" name="caixa-eletronico" id="caixa-eletronico" value="caixa-eletronico" /> Caixa eletrônico
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="sala-de-tv">	
+	    			<input type="checkbox" name="sala-de-tv" id="sala-de-tv" value="sala-de-tv" /> Sala de TV
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="casa-noturna-dj">	
+	    			<input type="checkbox" name="casa-noturna-dj" id="casa-noturna-dj" value="casa-noturna-dj" /> Casa noturna/DJ
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="equipe-de-entretenimento">	
+	    			<input type="checkbox" name="equipe-de-entretenimento" id="equipe-de-entretenimento" value="equipe-de-entretenimento" />  Equipe de entretenimento
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="parque-infantil">	
+	    			<input type="checkbox" name="parque-infantil" id="parque-infantil" value="parque-infantil" />  Parquinho infantil
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="lavanderia">	
+	    			<input type="checkbox" name="lavanderia" id="lavanderia" value="lavanderia" />  Lavanderia
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="servico-diario-limpeza">	
+	    			<input type="checkbox" name="servico-diario-limpeza" id="servico-diario-limpeza" value="servico-diario-limpeza" />  Serviço diário de limpeza
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+              		<label for="loja">	
+	    			<input type="checkbox" name="loja" id="loja" value="loja" />  Loja (na propriedade)
+	    			</label>
+    			</div>
+    		</div>	
+    		<!-- fim da primeira coluna de itens e início da segunda-->
+    		<div class="col-md-4">
+    			<div class="form-group">
+              		<label for="restaurante-alacarte">	
+	    			<input type="checkbox" name="restaurante-alacarte" id="restaurante-alacarte" value="Restaurante (á la carte)" /> Restaurante (á la carte)
+	    			</label>
+    			</div>
+    			<div class="form-group">
+              		<label for="restaurante-buffet">	
+	    			<input type="checkbox" name="restaurante-buffet" id="restaurante-buffet" value="Restaurante (buffet)" /> Restaurante (buffet)
+	    			</label>
+    			</div>
+    			<div class="form-group">
+              		<label for="bar">	
+	    			<input type="checkbox" name="bar" id="bar" value="bar" /> Bar
+	    			</label>
+    			</div>
+    			<div class="form-group">
+              		<label for="servico-de-quarto">	
+	    			<input type="checkbox" name="servico-de-quarto" id="servico-de-quarto" value="servico-de-quarto" /> Serviço de quarto
+	    			</label>
+    			</div>
+    			<div class="form-group">
+              		<label for="praia-particular">	
+	    			<input type="checkbox" name="praia-particular" id="praia-particular" value="praia-particular" /> Praia Particular
+	    			</label>
+    			</div>
+    			<div class="form-group">
+              		<label for="academia">	
+	    			<input type="checkbox" name="academia" id="academia" value="academia" /> Academia
+	    			</label>
+    			</div>
+    			<div class="form-group">
+              		<label for="alugule-de-bicicleta">	
+	    			<input type="checkbox" name="alugule-de-bicicleta" id="alugule-de-bicicleta" value="alugule-de-bicicleta" /> Aluguel de bicicleta
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="transfer-aeroporto-adicional">	
+	    			<input type="checkbox" name="transfer-aeroporto-adicional" id="transfer-aeroporto-adicional" value="transfer-aeroporto-adicional" /> Transfer aeroporto (custo adicional)
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="cofre">	
+	    			<input type="checkbox" name="cofre" id="cofre" value="cofre" /> Cofre
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="lounge">	
+	    			<input type="checkbox" name="lounge" id="lounge" value="lounge" /> Lounge
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="salao-de-jogos">	
+	    			<input type="checkbox" name="salao-de-jogos" id="salao-de-jogos" value="salao-de-jogos" /> Salão de jogos
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="entretenimento-noite">	
+	    			<input type="checkbox" name="entretenimento-noite" id="entretenimento-noite" value="entretenimento-noite" /> Entretenimento á noite
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="karaoke">	
+	    			<input type="checkbox" name="karaoke" id="karaoke" value="karaoke" /> Karaokê
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="servico-passar-roupa">	
+	    			<input type="checkbox" name="servico-passar-roupa" id="servico-passar-roupa" value="servico-passar-roupa" /> Serviço de passar roupas
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="engraxate">	
+	    			<input type="checkbox" name="engraxate" id="engraxate" value="engraxate" /> Engraxate
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="auditorio">	
+	    			<input type="checkbox" name="auditorio" id="auditorio" value="auditorio" /> Auditório
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="minimercado">	
+	    			<input type="checkbox" name="minimercado" id="minimercado" value="minimercado" /> Minimercado (na propriedade)
+	    			</label>
+    			</div>
+    		</div>
+    		<!-- fim da segunda coluna de itens e início da terceira-->
+    		<div class="col-md-4">
+            	<div class="form-group ">
+            	<label for="lanchonete">	
+	    			<input type="checkbox" name="lanchonete" id="lanchonete" value="lanchonete" /> Lanchonete
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="churrascaria">	
+	    			<input type="checkbox" name="churrascaria" id="churrascaria" value="churrascaria" /> Churrascaria
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="entrega-de-compras">	
+	    			<input type="checkbox" name="entrega-de-compras" id="entrega-de-compras" value="entrega-de-compras" /> Entrega de compras
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="cafe-da-manha-no-quarto">	
+	    			<input type="checkbox" name="cafe-da-manha-no-quarto" id="cafe-da-manha-no-quarto" value="cafe-da-manha-no-quarto" /> Café da manhã no quarto
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="sauna">	
+	    			<input type="checkbox" name="sauna" id="sauna" value="sauna" /> Sauna
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="servico-de-massagem">	
+	    			<input type="checkbox" name="servico-de-massagem" id="servico-de-massagem" value="servico-de-massagem" /> Serviço de massagem
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="aluguel-de-carro">	
+	    			<input type="checkbox" name="aluguel-de-carro" id="aluguel-de-carro" value="aluguel-de-carro" /> Aluguel de carro
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="transfer-aeroporto-gratis">	
+	    			<input type="checkbox" name="transfer-aeroporto-gratis" id="transfer-aeroporto-gratis" value="transfer-aeroporto-gratis" /> Transfer aeroporto (grátis)
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="jardim">	
+	    			<input type="checkbox" name="jardim" id="jardim" value="jardim" /> Jardim
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="terraco">	
+	    			<input type="checkbox" name="terraco" id="terraco" value="terraco" /> Terraço
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="biblioteca">	
+	    			<input type="checkbox" name="biblioteca" id="biblioteca" value="biblioteca" /> Biblioteca
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="capela-santuario">	
+	    			<input type="checkbox" name="capela-santuario" id="capela-santuario" value="capela-santuario" /> Capela/Satuário
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="baba">	
+	    			<input type="checkbox" name="baba" id="baba" value="baba" /> Babá
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="lavagem-a-seco">	
+	    			<input type="checkbox" name="lavagem-a-seco" id="lavagem-a-seco" value="lavagem-a-seco" /> Lavagem a seco
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="fax-copia">	
+	    			<input type="checkbox" name="fax-copia" id="fax-copia" value="fax-copia" /> Fax/Cópias
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="sala-de-reuniao">	
+	    			<input type="checkbox" name="sala-de-reuniao" id="sala-de-reuniao" value="sala-de-reuniao" /> Sala de reunião
+	    			</label>
+    			</div>
+    			<div class="form-group ">
+            	<label for="barbeiro-salao">	
+	    			<input type="checkbox" name="barbeiro-salao" id="barbeiro-salao" value="barbeiro-salao" /> Barbeiro/Salão
+	    			</label>
+    			</div>
+    		</div>
+    		</div>
+    		<!-- fim do row-->
+    	</div>
+    	<!-- fim do form-group-->
+    	</div>
+    	<!-- fim do body box-->
+    </div>
+    <!-- fim do box danger-->
+    </div>
+    <!-- fim do collapse-->
+    			
+
+
+  
 </form>
 {% endblock content %}
