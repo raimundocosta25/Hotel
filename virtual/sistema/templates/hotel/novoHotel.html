@@ -1,6 +1,7 @@
 {% extends 'hotel/base.html' %}
 
 {% block content %}
+
 <form action="/hotel/newHotel/" method="post">
   {% csrf_token %}
 
@@ -245,19 +246,19 @@
             <div class="col-md-4">
             	<div class="form-group ">
               		<label for="internet">	
-	    			<input type="checkbox" name="internet" id="internet" value="internet" /> Internet
+	    			<input type="checkbox"  name="internet" id="internet" value="internet" /> Internet
 	    			</label>
     			</div>
 
     			<div class="form-group">
               		<label for="estacionamento">	
-	    			<input type="checkbox" name="estacionamento" id="estacionamento" value="estacionamento" /> Estacionamento
+	    			<input type="checkbox"  name="estacionamento" id="estacionamento" value="estacionamento" /> Estacionamento
 	    			</label>
     			</div>	
 
     			<div class="form-group">
               		<label for="cafe_da_manha">	
-	    			<input type="checkbox" name="café da manhã" id="cafe_da_manha" value="Café da manhã" /> Café da manhã
+	    			<input type="checkbox"  name="café da manhã" id="cafe_da_manha" value="Café da manhã" /> Café da manhã
 	    			</label>
     			</div>
     			<div class="form-group ">
